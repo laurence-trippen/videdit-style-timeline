@@ -1,0 +1,9 @@
+@mixin gradient1($bg-color) {
+  background: $bg-color;
+  background: linear-gradient(
+    0deg, 
+    darken($bg-color, 20%) 0%, 
+    $bg-color 4%, 
+    $bg-color 96%, 
+    lighten($bg-color, 20%) 100%); 
+}

@@ -1,0 +1,20 @@
+@mixin arrow-down($width, $lr, $bg-color) {
+  width: 0; 
+  height: 0; 
+  border-left: $lr solid transparent;
+  border-right: $lr solid transparent;
+  
+  border-top: $width solid $bg-color;
+}
+
+@mixin box($size, $bg-color) {
+  width: $size;
+  height: $size;
+  background-color: $bg-color;
+}
+
+@mixin rect($width, $height, $bg-color) {
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+}

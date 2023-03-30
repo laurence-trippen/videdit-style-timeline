@@ -1,73 +1,10 @@
-$primary: #66CCC1;
+@import './colors.scss';
+@import './mixins/gradients.scss';
+@import './mixins/primitives.scss';
+@import './components/vid-timeline.scss';
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-@mixin gradient1($bg-color) {
-  background: $bg-color;
-  background: linear-gradient(
-    0deg, 
-    darken($bg-color, 20%) 0%, 
-    $bg-color 4%, 
-    $bg-color 96%, 
-    lighten($bg-color, 20%) 100%); 
-}
-
-.vid-timeline {
-  width: 100%;
-  background: black;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  
-  &__lane {
-    color: white;
-    padding: 0.75rem 1rem;
-    border-top: 1px dotted $primary;
-    
-    &:first-child {
-      border-top: none;
-    }
-    
-    &__item {
-      @include gradient1($primary);
-
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 2px;
-      position: relative;
-      z-index: 100;
-
-      pointer-events: none;
-    }
-  }
-  
-  &__cursor {
-    position: absolute;
-    top: 0;
-    left: 6px;
-    bottom: 0;
-    width: 1px;
-    background: $primary;
-
-    &__marker {
-      position: relative;
-      z-index: 10;
-      bottom: 25px;
-      right: 10px;
-    }
-  }
-
-  &__mask {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%); 
-  }
 }
 
 #service-timeline {
@@ -80,27 +17,6 @@ body {
   .vid-timeline__lane:nth-child(5) {
     padding-left: 220px;
   }
-}
-
-@mixin arrow-down($width, $lr, $bg-color) {
-  width: 0; 
-  height: 0; 
-  border-left: $lr solid transparent;
-  border-right: $lr solid transparent;
-  
-  border-top: $width solid $bg-color;
-}
-
-@mixin box($size, $bg-color) {
-  width: $size;
-  height: $size;
-  background-color: $bg-color;
-}
-
-@mixin rect($width, $height, $bg-color) {
-  width: $width;
-  height: $height;
-  background-color: $bg-color;
 }
 
 .arrow-down {
